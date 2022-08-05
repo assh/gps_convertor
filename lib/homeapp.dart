@@ -17,23 +17,32 @@ class _HomeState extends State<Home> {
     setState(() {
       coordinates = _textController.text;
       var coordList = coordinates.split(',');
+      var dirLat = 'N';
+      var dirLon = 'E';
       double decLat = double.parse(coordList.first);
       double decLon = double.parse(coordList.last);
+      if(decLat < 0){
+        dirLat = 'S';
+      }
+      if(decLon < 0){
+        dirLon = 'W';
+      }
       // Latitude
-      var d = decLat.floor();
-      var m = ((decLat - d) * 60).floor();
-      var s = (decLat - d - (m / 60.0)) * 3600;
+
+      var d = (decLat.toInt()).abs();
+      var m = (((decLat).abs() - d) * 60).floor();
+      var s = ((decLat).abs() - d - (m / 60.0)) * 3600;
       var tmp = s.toStringAsFixed(2);
       s = double.parse(tmp);
-      latitude = '$d\u00B0 $m\' $s"';
+      latitude = '$d\u00B0 $m\' $s" $dirLat';
 
       //Longitude
-      d = decLon.floor();
-      m = ((decLon - d) * 60).floor();
-      s = (decLon - d - (m / 60.0)) * 3600;
+      d = (decLon.toInt()).abs();
+      m = (((decLon).abs() - d) * 60).floor();
+      s = ((decLon).abs() - d - (m / 60.0)) * 3600;
       tmp = s.toStringAsFixed(2);
       s = double.parse(tmp);
-      longitude = '$d\u00B0 $m\' $s"';
+      longitude = '$d\u00B0 $m\' $s" $dirLon';
     });
   }
 
