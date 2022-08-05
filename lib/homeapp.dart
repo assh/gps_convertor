@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
       var s = (decLat - d - (m / 60.0)) * 3600;
       var tmp = s.toStringAsFixed(2);
       s = double.parse(tmp);
-      latitude = '$d $m\' $s"';
+      latitude = '$d\u00B0 $m\' $s"';
 
       //Longitude
       d = decLon.floor();
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
       s = (decLon - d - (m / 60.0)) * 3600;
       tmp = s.toStringAsFixed(2);
       s = double.parse(tmp);
-      longitude = '$d $m\' $s"';
+      longitude = '$d\u00B0 $m\' $s"';
     });
   }
 
@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             Flexible(
-              flex: 5,
+              flex: 3,
               child: Container(
                 padding: const EdgeInsets.only(
                   top: 20,
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                           Container(
                             alignment: Alignment.center,
                             margin: EdgeInsets.symmetric(vertical: 8),
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(15),
                             decoration: BoxDecoration(
                                 color: const Color.fromARGB(255, 235, 235, 235),
                                 borderRadius: BorderRadius.circular(15)),
@@ -114,7 +114,7 @@ class _HomeState extends State<Home> {
                           Container(
                             alignment: Alignment.center,
                             margin: EdgeInsets.symmetric(vertical: 8),
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(15),
                             decoration: BoxDecoration(
                                 color: const Color.fromARGB(255, 235, 235, 235),
                                 borderRadius: BorderRadius.circular(15)),
