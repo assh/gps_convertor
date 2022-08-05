@@ -41,12 +41,12 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 60, left: 30, right: 30),
+        padding: EdgeInsets.only(top: 35, left: 30, right: 30),
         color: const Color.fromARGB(255, 235, 235, 235),
         child: Column(
           children: [
             Flexible(
-              flex: 3,
+              flex: 5,
               child: Container(
                 padding: const EdgeInsets.only(
                   top: 20,
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
                 child: Column(
                   children: [
                     Flexible(
-                      flex: 3,
+                      flex: 1,
                       child: Column(
                         children: [
                           Row(
@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
                             controller: _textController,
                             style: const TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: 18,
                             ),
                             decoration: InputDecoration(
                               filled: true,
@@ -87,20 +87,6 @@ class _HomeState extends State<Home> {
                     ),
                     Flexible(
                       flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.all(0),
-                        child: Container(
-                          alignment: Alignment.center,
-                            //mainAxisAlignment: MainAxisAlignment.center,
-                            //crossAxisAlignment: CrossAxisAlignment.center,
-                            child: const Text(
-                          'OUTPUT',
-                          style: TextStyle(fontSize: 15),
-                        )),
-                      ),
-                    ),
-                    Flexible(
-                      flex: 3,
                       child: Column(
                         children: [
                           Row(
@@ -113,13 +99,13 @@ class _HomeState extends State<Home> {
                             decoration: BoxDecoration(
                                 color: const Color.fromARGB(255, 235, 235, 235),
                                 borderRadius: BorderRadius.circular(15)),
-                            child: Text(latitude),
+                            child: Text(latitude,style: TextStyle(fontSize: 18),),
                           ),
                         ],
                       ),
                     ),
                     Flexible(
-                      flex: 3,
+                      flex: 1,
                       child: Column(
                         children: [
                           Row(
@@ -132,7 +118,7 @@ class _HomeState extends State<Home> {
                             decoration: BoxDecoration(
                                 color: const Color.fromARGB(255, 235, 235, 235),
                                 borderRadius: BorderRadius.circular(15)),
-                            child: Text(longitude),
+                            child: Text(longitude,style: TextStyle(fontSize: 18,),),
                           ),
                         ],
                       ),
